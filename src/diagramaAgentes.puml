@@ -1,0 +1,41 @@
+@startuml
+
+class Agente {
+  - String id
+  - String nombre
+  - String mision
+  - int peligrosidad
+  - double pago
+}
+
+class Nodo {
+  - Agente dato
+  - Nodo siguiente
+}
+
+class ListaSimpleAgentes {
+  - Nodo cabeza
+  + agregar()
+  + eliminar()
+  + modificar()
+  + listar()
+}
+
+class AgenteGUI {
+  - JTextField txtNombre
+  - JTextField txtID
+  - JTextField txtMision
+  - JTextField textPago
+  - JComboBox comboPeligrosidad
+  - JButton btnAgregar
+  - JButton btnModificar
+  - JButton btnEliminar
+  - JButton btnListar
+  - ListaSimpleAgentes lista
+}
+
+Agente --> Nodo
+Nodo --> ListaSimpleAgentes
+AgenteGUI --> ListaSimpleAgentes
+
+@enduml
